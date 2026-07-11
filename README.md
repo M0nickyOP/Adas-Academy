@@ -2,3 +2,6 @@
 
 ## Diferença entre lista e dicionário
 Listas são um conjunto de elementos ordenados, já os dicionários são listas não ordenadas organizadas em chave-valor
+
+## Diferença entre NoSQL e SQL
+SQL é um banco de dados relacional, utilizando estruturas de tabelas. NoSQL é um banco não relacional, ou seja não utiliza estruturas de tabela tradicionais

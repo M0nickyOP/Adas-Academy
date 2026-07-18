@@ -8,16 +8,25 @@ class Contatos(BaseModel):
   contato: int
 
 @app.post("/contatos")
-def create_contato(item : Contatos):
-  lista_telefonica.append(item)
+def create_contact(contato:Contatos): 
+  lista_telefonica.append(contato.dict())
+  return contato
+
+@app.get("/contatos")
+def list_contact():
   return lista_telefonica
-
-@app.get("/contatos/{contato_id}")
-def get_contato(contato_id : int) -> Contatos:
- if contato_id < len(lista_telefonica):
-  return lista_telefonica[contato_id]
- else:
-    raise HTTPException(status_code = 404, detail = "Item not found")
-
-
    
+@app.get("/contatos/{nome}")
+def contatos_by_name(nome:str):
+  for contato in lista_telefonica:
+    if contato["nome"] == nome:
+      return contato
+
+
+@app.delete("/contatos/{nome}")
+def contatos_by_name(nome:str):
+  for i, contato in enumerate(lista_telefonica):
+    if contato["nome"] == nome:
+      lista_telefonica.pop(i)
+      return {"mensagem" : f"{nome} removido"}
+  return HTTPException 

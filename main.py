@@ -30,3 +30,7 @@ def contatos_by_name(nome:str):
       lista_telefonica.pop(i)
       return {"mensagem" : f"{nome} removido"}
   return HTTPException 
+
+@app.put("/contatos/{contato_id}")
+def update_contato(contato : Contatos)
+  return {contato}

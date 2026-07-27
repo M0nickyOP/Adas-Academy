@@ -31,6 +31,10 @@ def contatos_by_name(nome:str):
       return {"mensagem" : f"{nome} removido"}
   return HTTPException 
 
-@app.put("/contatos/{contato_id}")
-def update_contato(contato : Contatos)
-  return {contato}
+@app.put("/contatos/{nome}")
+def put_contato(nome:str, contato:Contatos):
+  for i, c in enumerate(lista_telefonica):
+    if c["nome"] == nome:
+      lista_telefonica[i] = contato.dict() 
+      return lista_telefonica[i]
+

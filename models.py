@@ -6,4 +6,4 @@ class Contato(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String)
     telefone = Column(String)
-    email = Column(String)
+    email = Column(String, unique = True)

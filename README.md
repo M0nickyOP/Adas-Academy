@@ -10,6 +10,6 @@ SQL é um banco de dados relacional, utilizando estruturas de tabelas. NoSQL é 
 | --- | --- | --- | --- | ---|
 | POST| /contatos/|nome, telefone, email|201 + usuário criado| 409 - Email repetido|
 |GET | /contatos/ | None | 200 | ---|
-|GET | /contatos/{id} | None | 200 | 404 - id não encontrado|
+|GET | /contatos/{id} | id | 200 | 404 - id não encontrado|
 |DELETE |/contato/{id}/| id |204| 404 - id não encontrado|
 |PATCH| /contatos/{id}/|id, telefone,email| 201 + usuário alterado | 409 - Email repetido |
